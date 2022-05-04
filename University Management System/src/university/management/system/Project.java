@@ -19,18 +19,18 @@ public class Project extends JFrame implements ActionListener{            //Main
         
         JMenuBar mb  = new JMenuBar();                           //Adding the options in the MenuBar by creating the object
         JMenu master = new JMenu("Master");
-        JMenuItem m1 = new JMenuItem("New Faculty");             ////Sub-options in the Menubar
+        JMenuItem m1 = new JMenuItem("New Faculty");             //Sub-options in the Menubar
         JMenuItem m2 = new JMenuItem("New Student Admission");
         master.setForeground(Color.BLUE);
         
         
         m1.setFont(new Font("monospaced",Font.BOLD,16));
         ImageIcon icon1 = new ImageIcon(ClassLoader.getSystemResource("university/management/system/icons/icon1.png"));
-        Image image1 = icon1.getImage().getScaledInstance(25, 25,Image.SCALE_DEFAULT);
+        Image image1 = icon1.getImage().getScaledInstance(25, 25,Image.SCALE_DEFAULT);                    //Image Dimensions
         m1.setIcon(new ImageIcon(image1));
         m1.setMnemonic('A');
-        m1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.CTRL_MASK));
-        m1.setBackground(Color.WHITE);
+        m1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.CTRL_MASK));                              //Creating a Shortcut key
+        m1.setBackground(Color.WHITE);                                                                              //Background color setup
         
         m2.setFont(new Font("monospaced",Font.BOLD,16));
         ImageIcon icon2 = new ImageIcon(ClassLoader.getSystemResource("university/management/system/icons/icon2.png"));    //Icon image location path
@@ -41,7 +41,7 @@ public class Project extends JFrame implements ActionListener{            //Main
         m2.setBackground(Color.WHITE);
     
         
-        m1.addActionListener(this);
+        m1.addActionListener(this);                            // Adding an ActionListener by which a click on particular menuitem will provide required information as meant to do so
         m2.addActionListener(this);
         
 
@@ -59,7 +59,7 @@ public class Project extends JFrame implements ActionListener{            //Main
         u1.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, ActionEvent.CTRL_MASK));
         u1.setBackground(Color.WHITE);
         
-        u2.setFont(new Font("monospaced",Font.BOLD,16));
+        u2.setFont(new Font("monospaced",Font.BOLD,16));                //Font-size and Font-type
         ImageIcon icon5 = new ImageIcon(ClassLoader.getSystemResource("university/management/system/icons/icon4.jpg"));
         Image image5 = icon5.getImage().getScaledInstance(25, 25,Image.SCALE_DEFAULT);
         u2.setIcon(new ImageIcon(image5));
@@ -343,16 +343,16 @@ public class Project extends JFrame implements ActionListener{            //Main
         }
         else if(msg.equals("Notepad")){
             try{
-                Runtime.getRuntime().exec("notepad.exe");
+                Runtime.getRuntime().exec("notepad.exe");               //Adding a Source path of notepad which will help in accessing this tool via application
             }catch(Exception e){ }
         }else if(msg.equals("Calculator")){
             try{
-                Runtime.getRuntime().exec("calc.exe");
+                Runtime.getRuntime().exec("calc.exe");                  //Adding a Source path of calculator which will help in accessing this tool via application
             }catch(Exception e){ }
         }else if(msg.equals("Web Browser")){
             
             try{
-                Runtime.getRuntime().exec("C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");
+                Runtime.getRuntime().exec("C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe");                       //Adding a Source path of Firefox which will help in accessing this tool via application
             }catch(Exception e){ }
         }else if(msg.equals("Exit")){
             System.exit(0);
