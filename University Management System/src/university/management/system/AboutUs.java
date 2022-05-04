@@ -7,32 +7,33 @@ public class AboutUs extends JFrame{
 
 	private JPanel contentPane;
 
-        public static void main(String[] args) {
+        public static void main(String[] args) throws Exception                     //Exception Handling
+	{
             new AboutUs().setVisible(true);			
 	}
     
         public AboutUs() {
             
-            super("About Us - University Name");
+            super("About Us - University Name");                     //Frame name
             setBackground(new Color(173, 216, 230));
-            setBounds(500, 250, 700, 500);
+            setBounds(500, 250, 700, 500);                          //Frame setup
 		
             contentPane = new JPanel();
             setContentPane(contentPane);
             contentPane.setLayout(null);
 
             JLabel l1 = new JLabel("New label");
-            ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("university/management/system/icons/logo.jpg"));
+            ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("university/management/system/icons/logo.jpg"));                // Icon source path
             Image i2 = i1.getImage().getScaledInstance(250, 100,Image.SCALE_DEFAULT);
             ImageIcon i3 = new ImageIcon(i2);
             l1 = new JLabel(i3);
-            l1.setBounds(400, 40, 250, 100);
+            l1.setBounds(400, 40, 250, 100);                     //option setup in current frame by providing the X and Y axis dimensions
             contentPane.add(l1);
 
 
             JLabel l3 = new JLabel("University");
             l3.setForeground(new Color(0, 250, 154));
-            l3.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 34));
+            l3.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 34));                //Font-type and Font-color
             l3.setBounds(140, 40, 200, 55);
             contentPane.add(l3);
 
@@ -74,7 +75,7 @@ public class AboutUs extends JFrame{
             contentPane.add(l10);
                 
                 
-            contentPane.setBackground(Color.WHITE);
+            contentPane.setBackground(Color.WHITE);                    //Background color of Frame
 	}
         
 
