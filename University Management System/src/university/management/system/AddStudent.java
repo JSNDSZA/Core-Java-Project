@@ -8,11 +8,11 @@ import javax.swing.*;
 class AddStudent implements ActionListener{
 
     JFrame f;
-    JLabel id,id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id11,id12,id15,id16,id17,lab,lab1,lab2;
-    JTextField t,t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13;
-    JButton b,b1,b2,b3;
-    JComboBox c1,c2;
-    
+    JLabel id,id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id11,id12,id15,id16,id17,lab,lab1,lab2;                      //Descriptive label where we setup font color, Icon source path, etc;
+    JTextField t,t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,t12,t13;           //Input Text Fields
+    JButton b,b1,b2,b3;                                    //Buttons
+    JComboBox c1,c2;                                      //Combination Boxes which help us to choose the required option in given options
+     
       
     Random ran = new Random();
     long first4 = (ran.nextLong() % 9000L) + 1000L;
@@ -202,13 +202,13 @@ class AddStudent implements ActionListener{
         String k = t11.getText();
         String l = (String)c1.getSelectedItem();
         String m = (String)c2.getSelectedItem();
-        
-        if(ae.getSource() == b){
+              
+        if(ae.getSource() == b){                                     
             try{
-                conn cc = new conn();
+                conn cc = new conn();             //Establishing a connection with the MySQL
                 String q = "insert into student values('"+a+"','"+bb+"','"+c+"','"+d+"','"+e+"','"+ff+"','"+g+"','"+h+"','"+i+"','"+j+"','"+k+"','"+l+"','"+m+"')";
-                cc.s.executeUpdate(q);
-                JOptionPane.showMessageDialog(null,"Student Details Inserted Successfully");
+                cc.s.executeUpdate(q);           //Updating the given information
+                JOptionPane.showMessageDialog(null,"Student Details Inserted Successfully");               //Responsive Box showing up the added message
                 f.setVisible(false);
             }catch(Exception ee){
                 System.out.println("The error is:"+ee);
