@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.util.Random;
 import javax.swing.*;
 
-class AddTeacher implements ActionListener{
+class AddTeacher implements ActionListener{        //Adding new teacher details
 
     JFrame f;
     JLabel id,id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id11,id12,id15,id16,id17,lab,lab1,lab2;
@@ -220,7 +220,7 @@ class AddTeacher implements ActionListener{
             
         }
     }
-    public static void main(String[] arg){
+    public static void main(String[] arg) throws Exception {
         new AddTeacher().f.setVisible(true);
     }
 }
