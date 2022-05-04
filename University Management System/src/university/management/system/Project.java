@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Project extends JFrame implements ActionListener{
+public class Project extends JFrame implements ActionListener{            //Main Frame
     Project(){
         super("University Management System");
         
@@ -17,9 +17,9 @@ public class Project extends JFrame implements ActionListener{
         
         add(l1);
         
-        JMenuBar mb  = new JMenuBar();
+        JMenuBar mb  = new JMenuBar();                           //Adding the options in the MenuBar by creating the object
         JMenu master = new JMenu("Master");
-        JMenuItem m1 = new JMenuItem("New Faculty");
+        JMenuItem m1 = new JMenuItem("New Faculty");             ////Sub-options in the Menubar
         JMenuItem m2 = new JMenuItem("New Student Admission");
         master.setForeground(Color.BLUE);
         
@@ -33,7 +33,7 @@ public class Project extends JFrame implements ActionListener{
         m1.setBackground(Color.WHITE);
         
         m2.setFont(new Font("monospaced",Font.BOLD,16));
-        ImageIcon icon2 = new ImageIcon(ClassLoader.getSystemResource("university/management/system/icons/icon2.png"));
+        ImageIcon icon2 = new ImageIcon(ClassLoader.getSystemResource("university/management/system/icons/icon2.png"));    //Icon image location path
         Image image2 = icon2.getImage().getScaledInstance(20, 20,Image.SCALE_DEFAULT);
         m2.setIcon(new ImageIcon(image2));
         m2.setMnemonic('B');
@@ -46,8 +46,8 @@ public class Project extends JFrame implements ActionListener{
         
 
   
-        JMenu user = new JMenu("Details");
-        JMenuItem u1 = new JMenuItem("Student Details");
+        JMenu user = new JMenu("Details");                  //MenuBar
+        JMenuItem u1 = new JMenuItem("Student Details");        //Suboptions
         JMenuItem u2 = new JMenuItem("Teacher Details");
         user.setForeground(Color.RED);
         
@@ -293,7 +293,7 @@ public class Project extends JFrame implements ActionListener{
         
         exit.add(ex);
          
-        mb.add(master);
+        mb.add(master);                            //Adding all the menu objects created in the menu bar
         mb.add(user);
         mb.add(attendance);
         mb.add(attendance_detail);
@@ -310,7 +310,7 @@ public class Project extends JFrame implements ActionListener{
         setLayout(new FlowLayout());
         setVisible(false);
     }
-    public void actionPerformed(ActionEvent ae){
+    public void actionPerformed(ActionEvent ae){                   //Action Listener added in order to show next window when the required menu item is clicked.
         String msg = ae.getActionCommand();
         if(msg.equals("New Student Admission")){
             new AddStudent().f.setVisible(true);
@@ -375,7 +375,8 @@ public class Project extends JFrame implements ActionListener{
     }
     
     
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception                                   //Exception Handling
+    {
         new Project().setVisible(true);
     }
     
